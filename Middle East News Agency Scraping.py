@@ -20,14 +20,12 @@ chromedriver = "/Users/T/Google Drive/Lab on Non-Democratic Politics/Scraping/ch
 os.environ["webdriver.chrome.driver"] = chromedriver
 driver = webdriver.Chrome(chromedriver)
 
-# set your working directory
+# working directory
 writedir = '/Users/T/Google Drive/Lab on Non-Democratic Politics/Scraping'
 
-# set your writepath
+# writepath
 f = open(writedir+'test.txt','a')
 
-# set the dates you want to scrape
-# date format: YYYY-D-MM
 startdate = '2017-3-20'
 enddate = '2017-3-20'
 
@@ -38,7 +36,7 @@ date = datetime.datetime.strptime(startdate, "%Y-%m-%d")
 while date <= datetime.datetime.strptime(enddate, "%Y-%m-%d"):
     print startdate
     # nav to URL
-    n = 1 # for now, go to the first result page
+    n = 1 # go to the first result page
     url = 'https://www.mena.org.eg/en/search/index/table/Search+Text+News/from_date/'+startdate+'/to_date/'+enddate+'/search/Search+Text+News/page/'+str(n)
     print 'getting URL:',url
     driver.get(url)
